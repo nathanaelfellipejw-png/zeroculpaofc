@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zero Culpa - Junte-se a nós</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: #a8d5ba;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+
+    .logo img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .palavras {
+      display: flex;
+      justify-content: center;
+      gap: 75px;
+      font-size: 18px;
+      font-weight: bold;
+      align-items: center;
+    }
+
+    .pa1 {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 70px;
+      margin-right: 20px;
+    }
+
+    /* Título da pesquisa */
+    .junta {
+      color: #ffffff;
+      text-align: center;
+      background-color: #538868;
+      margin: 0;
+      padding: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Container que centraliza a barra de pesquisa */
+    .container-pesquisa {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      position: relative; /* necessário para posicionar filtro */
+    }
+
+    /* Barra de pesquisa */
+    .barra-pesquisa {
+      background: #ffffff;
+      padding: 10px 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2; /* para ficar acima do fundo */
+    }
+
+    .barra-pesquisa input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+      font-size: 1rem;
+    }
+
+    .barra-pesquisa button {
+      padding: 8px 12px;
+      border: none;
+      background: #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* Filtros: posicionado absoluto para ficar sobreposto */
+    .filtros {
+      position: absolute;
+      top: 110%; /* um pouco abaixo da barra de pesquisa */
+      right: 0;
+      background: #444;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      width: 320px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: none; /* escondido inicialmente */
+      z-index: 10;
+    }
+
+    .filtros h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .precos {
+      margin-bottom: 15px;
+    }
+
+    .precos label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .precos input {
+      width: 70px;
+      margin-right: 10px;
+      padding: 6px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .tags {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .tags button {
+      background: #666;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* Produtos */
+.produtos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.produto {
+  background-color: #a8d5ba;
+  padding: 20px;
+  text-align: center;
+  color: #000;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.produto h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.image-container {
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.produto .product-title {
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.produto .product-description {
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 90%;
+  margin-top: 10px;
+}
+
+a {
+  color: inherit;   /* herda a cor do elemento pai (ex: do h2) */
+  text-decoration: none; /* remove o sublinhado */
+}
+
+    /* Rodapé */
+    footer {
+      background: #538868;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <img src="zero culpa negao.png" alt="logo" />
+      </div>
+      <div class="palavras">
+        <h2 class="pa1"><a href="1inicio.html">INÍCIO</a></h2>
+        <h2 class="pa1"><a href="1loja.html">LOJAS</a></h2>
+        <h2 class="pa1"><a href="1sobrenos.html">SOBRE NÓS</a></h2>
+        <h2 class="pa1"><a href="1juntese.html">JUNTE-SE</a></h2>
+        <h2 class="pa1"><a href="1carrinho.html">CARRINHO</a></h2>
+      </div>
+  <a href="1usuário.html"><img src="icon.png" alt="" class="icon"></a>
+    </header>
+
+    <h2 class="junta">PESQUISA</h2>
+
+    <div class="container-pesquisa">
+      <div class="barra-pesquisa">
+        <input type="text" placeholder="Pesquisar" />
+        <button id="btnFiltro">Filtro</button>
+        <button>🔍</button>
+        <div class="filtros" id="filtros">
+          <h3>FILTROS</h3>
+          <div class="precos">
+            <label>PREÇOS:</label>
+            <input type="text" placeholder="DE" />
+            <input type="text" placeholder="ATÉ" />
+          </div>
+          <div class="tags">
+            <button>S/AÇÚCAR</button>
+            <button>TORTA</button>
+            <button>PROTEICO</button>
+            <button>COOKIES</button>
+            <button>S/GLÚTEN</button>
+            <button>BOLOS</button>
+            <button>BROWNIES</button>
+            <button>TRUFAS</button>
+            <button>OUTRA RESTRIÇÃO ALIMENTAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produtos -->
+    <section class="produtos">
+
+<div class="produto">
+<h2>COMBO VIDA DOCE</h2>
+<div class="image-container">
+<img src="combo-vida-doce.png" alt="Combo com bolo de mirtilo, cookies e cupcake">
+</div>
+<div></div>
+<div class="product-description">Bolo de mirtilo, cookies e cupcake</div>
+<div class="product-description">R$79,99</div>
+<div class="product-description">Adicionar ao carrinho</div>
+</div>
+
+<div class="produto">
+<h2>COOKIES</h2>
+<div class="image-container">
+<img src="cookies.png" alt="Cookies com gotas de chocolate">
+</div>
+<div class="product-description">cookies c/gotas de chocolate 70%</div>
+<div class="product-description">R$ 6,49</div>
+<div class="product-description">Adicionar ao carrinho</div>   
+</div>
+
+
+
+<div class="produto">
+<h2>TORTA DE MORANGO</h2>
+<div class="image-container">
+<img src="cheesecake.png" alt="Torta de morango">
+</div>
+<div class="product-description">morango e açúcar mascavo</div>
+<div class="product-description">R$ 5,99</div>
+<div class="product-description">Adicionar ao carrinho</div>    
+</div>
+
+
+<div class="produto">
+<h2>CHEESECAKE DE MORANGO</h2>
+<div class="image-container">
+<img src="cheesecake de morango.png" alt="Combo com bolo de mirtilo, cookies e cupcake">
+</div>
+<div class="product-description">cheesecake de morango, com brownie de morango</div>
+<div class="product-description">R$79,99</div>
+<div class="product-description">Adicionar ao carrinho</div>
+</div>
+
+<div class="produto">
+<h2>KIT AMANSA MANDÍBULA</h2>
+<div class="image-container">
+<img src="doces-fitness.png" alt="Cookies com gotas de chocolate">
+</div>
+<div class="product-description">Cookies e paçoca</div>
+<div class="product-description">R$ 6,49</div>
+<div class="product-description">Adicionar ao carrinho</div>   
+</div>
+
+<div class="produto">
+<h2>BOLO DE CHOCOLATE COM CALDA</h2>
+<div class="image-container">
+<img src="bolo-de-chocolate.png" alt="Cookies com gotas de chocolate">
+</div>
+<div class="product-description">Bolo de chocolate 70%</div>
+<div class="product-description">R$ 43,99</div>
+<div class="product-description">Adicionar ao carrinho</div>   
+</div>
+
+
+
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>© 2025 ZERO CULPA. TODOS OS DIREITOS RESERVADOS.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Script para mostrar/ocultar os filtros ao clicar no botão 🔍
+    const btnFiltro = document.getElementById('btnFiltro');
+    const filtros = document.getElementById('filtros');
+
+    btnFiltro.addEventListener('click', () => {
+      if (filtros.style.display === 'block') {
+        filtros.style.display = 'none';
+      } else {
+        filtros.style.display = 'block';
+      }
+    });
+
+    // Fecha os filtros se clicar fora
+    document.addEventListener('click', (e) => {
+      if (!btnFiltro.contains(e.target) && !filtros.contains(e.target)) {
+        filtros.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

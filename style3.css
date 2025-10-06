@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.x{font-size: 20px;}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 60px; 
+}
+
+.hi {width: 180px;}
+
+.box1 {
+  margin-top: 0px;
+  background-color: #a8d5ba;
+  padding: 40px; 
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  min-width: 420px; 
+  height: 500px;
+  width: 700px;
+  align-items: center;
+}
+
+.box1 label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+}
+
+.box1 input {
+  width: 100%;
+  padding: 14px; 
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 15px;
+}
+a {
+  color: inherit;   /* herda a cor do elemento pai (ex: do h2) */
+  text-decoration: none; /* remove o sublinhado */
+}
+
+.box1 button {
+  padding: 14px;
+  border: 2px solid black;
+  border-radius: 15px;
+  color: #F0C9B8;
+  background-color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.box1 button:hover {
+  background-color: #ddd;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.box2 img {
+  width: 200px;
+}
+
+.box2 h1 {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.botao{
+text-transform: uppercase;
+color: #F0C9B8;
+background-color: #000;
+height: 60px;
+border: 4px solid #000;
+width: 300px;
+border-radius: 45px;
+margin-top: 20px;
+font-weight: 900;       
+font-size: 13px; 
+}

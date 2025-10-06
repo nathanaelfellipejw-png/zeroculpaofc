@@ -1,0 +1,226 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #fdf6ec;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== HEADER ========== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a8d5ba;
+    padding: 10px 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a3f35;
+}
+
+.logo img {
+    width: 70px; 
+    height: auto; 
+    display: block; /* Garante que a imagem se comporte como um bloco para controle de tamanho */
+}
+
+/* Ajusta o espaçamento dos links de navegação */
+.palavras {
+    display: flex;
+    gap: 25px;
+}
+/* Estilo para os links de navegação */
+.pa1 a {
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.pa1 {
+  margin: 0;  /* remove margens padrão do h2 */
+  padding: 0; /* remove padding extra */
+  margin-left: 50px;
+}
+
+.pa1 a:hover {
+  color: #538868;
+}
+
+/* Área da direita */
+.search-box input {
+  width: 220px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #538868;
+}
+
+.icon {
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-left: 15px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* ========== TÍTULO ========== */
+.junta {
+  color: #fff;
+  text-align: center;
+  background-color: #538868;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* ========== LAYOUT DO CARRINHO ========== */
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px 60px;
+}
+
+/* Produtos */
+.products-section {
+  flex: 2;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.products-section h2 {
+  margin-bottom: 20px;
+  color: #538868;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product-info .price {
+  font-weight: bold;
+  color: #538868;
+  font-size: 16px;
+}
+
+/* Resumo */
+.summary-section {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.summary-section h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #538868;
+}
+
+.summary-section ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.summary-section li {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.total-section {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 15px;
+}
+
+.confirm-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #538868;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.confirm-btn:hover {
+  background-color: #3d6b50;
+}
+
+/* ========== FOOTER ========== */
+footer { position: fixed; /* fixa na tela */ bottom: 0; /* gruda no fundo */ left: 0; width: 100%; /* ocupa toda a largura */ background-color: #538868; color: #ffffff; text-align: center; padding: 15px; font-size: 13px; }
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .products-section,
+  .summary-section {
+    max-width: 100%;
+  }
+}

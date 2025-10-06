@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6ec;
+    /* Boa Prática: Use min-height e display: flex para layouts que precisam de um footer no fim */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+a {
+    color: inherit; 
+    text-decoration: none; 
+}
+
+/* ---------------------------------------------------- */
+/* HEADER E NAVEGAÇÃO */
+/* ---------------------------------------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a8d5ba;
+    padding: 10px 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a3f35;
+}
+
+.logo img {
+    width: 70px; 
+    height: auto; 
+    display: block; /* Garante que a imagem se comporte como um bloco para controle de tamanho */
+}
+
+/* Ajusta o espaçamento dos links de navegação */
+.palavras {
+    display: flex;
+    gap: 25px;
+}
+/* Estilo para os links de navegação */
+.pa1 a {
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    color: #4a3f35;
+}
+
+.search-box input {
+    width: 200px; 
+    height: 30px;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+.sub-nav {
+color: #fff;
+  text-align: center;
+  background-color: #538868;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* ---------------------------------------------------- */
+/* CONTEÚDO PRINCIPAL (DIV .TUDO E CONTAINERS) */
+/* ---------------------------------------------------- */
+
+.tudo {
+    /* 💡 CORREÇÃO PRINCIPAL: Centraliza o bloco 'tudo' na tela */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente container1 e container2 */
+    align-items: flex-start; /* Alinha os containers no topo da div 'tudo' */
+    gap: 30px; 
+    padding: 30px 0;
+    width: 100%; /* Ocupa a largura total para centralizar os filhos */
+}
+
+
+.container1{
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; /* Alinha o conteúdo box1/box2 no topo do container */
+    gap: 20px;
+    background-color: #538868;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    color: #000;
+    line-height: 1.8;
+    width: 45%; 
+    max-width: 450px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; /* Alinha o conteúdo box1/box2 no topo do container */
+    gap: 20px;
+    background-color: #538868;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    color: #000;
+    line-height: 1.8;
+    width: 45%; 
+    max-width: 450px;
+}
+
+/* Alinha o texto dentro das caixas box1 e box2 */
+.box1, .box2{
+    background-color: #a8d5ba;
+    border-radius: 10px;
+    padding: 20px;
+    /* Ajustado para centralizar o texto verticalmente (se necessário) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* ---------------------------------------------------- */
+/* RODAPÉ E MÍDIA QUERIES */
+/* ---------------------------------------------------- */
+
+.main-footer {
+    width: 100%;
+    background-color: #538868;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto; /* Empurra o footer para o final da página */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .palavras {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .tudo {
+        flex-direction: column; /* Containers empilham em telas pequenas */
+        align-items: center;
+        gap: 20px;
+    }
+    .container1, .container2 {
+        width: 90%; /* Ocupa mais espaço em telas pequenas */
+        max-width: none;
+    }
+    
+    /* Remove elementos que podem não caber bem */
+    .search-box {
+        order: 3; /* Move a busca para baixo */
+    }
+}
